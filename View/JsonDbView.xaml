@@ -1,0 +1,44 @@
+﻿<Page x:Class="BankingApp.Controller.JsonDbController"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="JsonDatabase">
+
+    <Grid Background="White">
+        <ScrollViewer>
+            <TextBlock x:Name="BankTextBlock" Width="620" Margin="20,260,0,0" 
+                       TextWrapping="Wrap" Height="107" RenderTransformOrigin="0.495,0.598"/>
+        </ScrollViewer>
+        <Label Content="Json Database" FontSize="20" HorizontalAlignment="Center" Margin="0,5,0,0" VerticalAlignment="Top"/>
+        <ListView x:Name="JsonDbContentListView" Width="620" Margin="75,192,75,267"/>
+        <Button HorizontalAlignment="Left" Margin="645,509,0,0" VerticalAlignment="Top" Height="33" Width="90" Click="SyncDb_Click">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="Refresh"/>
+                <TextBlock Margin="5" Text="SyncDb" FontSize="15"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="545,509,0,0" VerticalAlignment="Top" Height="33" Width="90" Click="ClearContent_Click">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="Eraser"/>
+                <TextBlock Margin="5" Text="Content" FontSize="15"/>
+            </StackPanel>
+        </Button>
+        <Label x:Name="NoDataLabel"  Content="No data display" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="287,225,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="86,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="104" Width="620">
+            Cette applcation utilise deux base de données. Une avec SQlite et l'auteur avec des fichiers texte dont les données utilisateurs
+            sont stockés sous format Json. Pour des raisons de simplicité et de temps, nous nous servirons de la Json Database que
+            pour stocker les données contenues dans la SQlite Database. Le chemin : "\BankingApp\bin\Debug\net5.0-windows\DbJson", contient
+            deux fichiers textes : "BankDatabaseJson" et "ClientTable". Le premier contient la liste des clients présents dans la database et leur
+            nombre, et le second fichier décrit toutes les données utilisateur sous format Json.
+        </TextBlock>
+        <Label Content="Contenu du fichier ClientTable.txt Désérialisé : " FontSize="15" HorizontalAlignment="Center" Margin="0,156,0,0" 
+               VerticalAlignment="Top" RenderTransformOrigin="0.44,0.261"/>
+        <Label Content="Contenu du fichier BankDatabaseJson.txt : " FontSize="15" HorizontalAlignment="Center" Margin="0,340,0,0" 
+               VerticalAlignment="Top" RenderTransformOrigin="0.44,0.261"/>
+
+    </Grid>
+</Page>

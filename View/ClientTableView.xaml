@@ -1,0 +1,99 @@
+﻿<Page x:Class="BankingApp.Controller.ClientTableController"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d" 
+        Title="Client Table" d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Background="White">
+        <DataGrid x:Name="DataGrid"  ItemsSource="{Binding}" IsReadOnly="True" MouseDoubleClick="Double_Click_On_Row" Margin="0,55,0,129" 
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Width="80" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Firstname" Width="150" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Lastname" Width="150" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Pin" Width="150" Binding="{Binding Pin}" />
+                <DataGridTextColumn Header="Amount" Width="150" Binding="{Binding Amount}" />
+                <DataGridTextColumn Header="Blocked" Width="*" Binding="{Binding IsBlocked}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="AddClientButton" Margin="48,542,648,23" Click="Button_Add_Client_Click">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="UserPlus"/>
+                <TextBlock Margin="4">Add Client</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="RemoveClientButton" Margin="170,543,526,22" Click="Button_Remove_Client_Click">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="Trash"/>
+                <TextBlock Margin="4">Delete Client</TextBlock>
+            </StackPanel>
+        </Button>
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Left" Margin="48,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Height="28">
+            <UIElement.RenderTransform>
+                <MatrixTransform/>
+            </UIElement.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="FisrtNameTextBox" HorizontalAlignment="Left" Margin="160,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Height="28">
+            <TextBox.RenderTransform>
+                <MatrixTransform/>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox  x:Name="LastNameTextBox" HorizontalAlignment="Left" Margin="272,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Height="28">
+            <TextBox.RenderTransform>
+                <MatrixTransform/>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox  x:Name="PinTextBox" HorizontalAlignment="Left" Margin="384,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Height="28">
+            <TextBox.RenderTransform>
+                <MatrixTransform/>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox  x:Name="AmountTextBox" HorizontalAlignment="Left" Margin="496,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Height="28">
+            <TextBox.RenderTransform>
+                <MatrixTransform/>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox  x:Name="IsBlockedTextBox" HorizontalAlignment="Left" Margin="608,480,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Height="28">
+            <TextBox.RenderTransform>
+                <MatrixTransform/>
+            </TextBox.RenderTransform>
+        </TextBox>
+
+        <Button x:Name="UpdateButton" Margin="292,542,386,23" Click="Button_Update_Client_Click">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="Refresh"/>
+                <TextBlock Margin="4">Update Client</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button x:Name="LoadDataButton" Margin="435,542,248,23" Click="Button_Load_Data_Click">
+            <StackPanel Orientation="Horizontal" Width="104">
+                <fa:ImageAwesome Width="20" Height="20" Icon="Tasks"/>
+                <TextBlock Margin="4">Load Data</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Label Content="Client Id" HorizontalAlignment="Left" Margin="60,510,0,0" VerticalAlignment="Top"/>
+        <Label Content="Firstname" HorizontalAlignment="Left" Margin="170,510,0,0" VerticalAlignment="Top"/>
+        <Label Content="Lastname" HorizontalAlignment="Left" Margin="280,510,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pin" HorizontalAlignment="Left" Margin="409,510,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="509,510,0,0" VerticalAlignment="Top"/>
+        <Label Content="IsBlocked" HorizontalAlignment="Left" Margin="618,510,0,0" VerticalAlignment="Top"/>
+        <Button Click="Search_Click" HorizontalAlignment="Left" Margin="474,14,0,0" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="Search"/>
+                <TextBlock Text="Search" Margin="5"/>
+            </StackPanel>
+        </Button>
+        <Label Content="Search By Firstname : " HorizontalAlignment="Left" Margin="201,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SearchBarTextBox" HorizontalAlignment="Center" Margin="0,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
+        <Button Click="Cancel_Click" HorizontalAlignment="Left" Margin="562,13,0,0" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <fa:ImageAwesome Width="20" Height="20" Icon="TimesCircle"/>
+                <TextBlock Text="Cancel" Margin="5"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Page>
+

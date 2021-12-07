@@ -1,0 +1,67 @@
+﻿<Window x:Class="BankingApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="615" Width="1054">
+
+    <DockPanel LastChildFill="False" Margin="0,0,0,0" Height="600" Width="1049">
+        <StackPanel Width="249" >
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="DimGray"/>
+                    <Setter Property="FontSize" Value="20" />
+                </Style>
+            </StackPanel.Resources>
+            <Button Height="120" Click="Button_Home_Click" FontFamily="Arial Black">
+                <StackPanel>
+                    <fa:ImageAwesome
+                        Width="30"
+                        Height="30"
+                        Icon="Home" />
+                    <TextBlock><Run Text="Home"/></TextBlock>
+
+                </StackPanel>
+            </Button>
+            <Button Height="120" Click="Button_Clients_Click" FontFamily="Arial Black">
+                <StackPanel>
+                    <fa:ImageAwesome
+                        Width="30"
+                        Height="30"
+                        Icon="Users" />
+                    <TextBlock><Run Text="Clients"/></TextBlock>
+
+                </StackPanel>
+            </Button>
+            <Button Height="120" Click="Button_Sign_In_Click" FontFamily="Arial Black">
+                <StackPanel>
+                    <fa:ImageAwesome
+                        Width="30"
+                        Height="30"
+                        Icon="SignIn" />
+                    <TextBlock><Run Text="Sign-In"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Height="120" Click="Button_Client_Commments_Click" FontFamily="Arial Black">
+                <StackPanel>
+                    <fa:ImageAwesome
+                        Width="30"
+                        Height="30"
+                        Icon="Comments" />
+                    <TextBlock><Run Text="Clients Comments"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Height="120" Click="Button_Json_Database_Click" FontFamily="Arial Black">
+                <StackPanel>
+                    <fa:ImageAwesome
+                        Width="30"
+                        Height="30"
+                        Icon="Database" />
+                    <TextBlock><Run Text="Json Database"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="MainContentFrame" Width="800" NavigationUIVisibility="Hidden" BorderBrush="DimGray" BorderThickness="4,0,0,0" />
+    </DockPanel>
+</Window>
